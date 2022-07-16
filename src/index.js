@@ -1,5 +1,5 @@
-export class Character {
-  constructor(name, type, attack, defence) {
+export default class Character {
+  constructor(name, type) {
     if (name.length < 2 || name.length > 10) {
       throw new Error('Некорректное имя');
     } else {
@@ -11,8 +11,6 @@ export class Character {
     } else {
       throw new Error('Некорректный тип');
     }
-    this.defence;
-    this.attack;
     this.health = 100;
     this.level = 100;
   }
@@ -29,7 +27,7 @@ export class Character {
 
   damage(points) {
     if (this.health <= 0) {
-      return;
+      throw new Error('Ошибка');
     }
     this.health -= (points * (1 - this.defence / 100));
   }
