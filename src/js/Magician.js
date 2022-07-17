@@ -1,6 +1,6 @@
-import Character from '../index';
+import Character from './Character';
 
-export default class Daemon extends Character {
+export default class Magician extends Character {
   constructor(...args) {
     super(...args);
     this.attack = 10;
